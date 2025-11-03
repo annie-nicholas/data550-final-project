@@ -12,10 +12,8 @@ Data source: <https://www.kaggle.com/datasets/fedesoriano/hepatitis-c-dataset>
 
 # How to run code and generate report
 
-Within the Make file:
+Within the Makefile:
 
-1.  Generate descriptive statistics
-2.  Run regression
-3.  Generate table 1
-4.  Generate graph
+1.  Generate descriptive statistics by running "make Output/Table1.rds" in terminal
+2.  Run regression and create the regression table and graph by running "make Output/Table_reg.rds Output/Reg_plot.png"
 5.  Compile report
