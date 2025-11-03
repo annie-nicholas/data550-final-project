@@ -1,0 +1,53 @@
+---
+title: 'Final project 2: R Markdown'
+author: "Annie Nicholas"
+date: "2025-09-30"
+output: html_document
+---
+
+```{r setup, echo = TRUE}
+library(gtsummary)
+library(here)
+library(dplyr)
+library(ggplot2)
+data <- read.csv(file = here::here("HepatitisCdata.csv"))
+```
+
+**Introduction**
+
+This dataset comes from Kaggle, and it contains Hepatitis C prediction data which includes blood lab values from both uninfected blood donors and Hep C patients. In this assignment, I will run logistic regression models to assess the association between blood component levels and having Hep C. I'd like to see if any of the blood components are strongly associated with having Hep C.
+
+```{r, echo = FALSE}
+data <- data %>%
+  mutate(hep = case_when(
+    Category == "0=Blood Donor" | Category == "0s=suspect Blood Donor" ~ 0,
+    TRUE ~ 1
+  ))
+```
+
+**Table 1.** Logistic Regression Results
+
+This table shows the results from each logistic regression model and includes odds ratios with 95% confidence intervals. Hepatitis C was coded as 0/1 (0=Hep C negative, 1=Hep C positive).
+
+```{r, message = FALSE}
+tbl_uvregression(
+  data,
+  y = hep,
+  include = c(ALB, ALP, ALT, AST, BIL, CHE, CHOL, CREA, GGT, PROT),
+  method = glm,
+  method.args = list(family = binomial()),
+  exponentiate = TRUE
+)
+```
+
+**Figure 1.** Logistic Regression Curve
+
+This logistic regression curve shows the association between Bilirubin level (mg/dL) and likelihood of being Hep C positive.
+
+```{r, message = FALSE}
+ggplot(data, aes(x = BIL, y = hep)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "glm", method.args = list(family = "binomial"), se = TRUE) +
+  labs(y = "Probability of Being Hep C Positive", x = "Bilirubin (mg/dL)", title = "Logistic Regression Fit") +
+  theme_minimal()
+```
