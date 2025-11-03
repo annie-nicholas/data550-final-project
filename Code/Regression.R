@@ -36,4 +36,7 @@ reg_plot <- ggplot(data, aes(x = BIL, y = hep_bin)) +
   theme_minimal()
 
 #save graph
-saveRDS(reg_plot, "Output/Reg_plot.png")
+ggsave(file = here::here("Output/Reg_plot.png"),
+       plot = reg_plot,
+       device = "png"
+)
