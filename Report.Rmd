@@ -1,0 +1,32 @@
+---
+title: "DATA550 Final Project Report"
+author: "Annie Nicholas"
+output: html_document
+---
+```{r, echo = FALSE}
+library(here)
+library(knitr)
+```
+
+**Introduction**
+
+This dataset comes from Kaggle, and it contains Hepatitis C prediction data which includes blood lab values from both uninfected blood donors and Hep C patients. In this assignment, I will run logistic regression models to assess the association between blood component levels and having Hep C. I'd like to see if any of the blood components are strongly associated with having Hep C.
+
+**Table 1.** Descriptive Statistics
+```{r, echo = FALSE}
+readRDS(file = here::here("Output/Table1.rds"))
+```
+
+**Table 2.** Logistic Regression Results
+This table shows the results from each logistic regression model and includes odds ratios with 95% confidence intervals. Hepatitis C was coded as 0/1 (0=Hep C negative, 1=Hep C positive).
+```{r, echo = FALSE}
+readRDS(file = here::here("Output/Table_reg.rds"))
+```
+Each odds ratio represents the change in the odds of having Hepatitis C for a 1mg/dL increase in the component of interest.
+
+**Figure 1.** Logistic Regression Curve
+```{r, echo = FALSE}
+#| fig.align = "center",
+knitr::include_graphics(here::here("Output/Reg_plot.png"))
+```
+
