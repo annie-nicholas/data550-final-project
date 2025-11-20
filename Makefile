@@ -9,3 +9,7 @@ Report.html: Code/Make_Report.R Report.Rmd
 
 clean:
 	rm Output/*.rds Output/*.png
+	
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"
