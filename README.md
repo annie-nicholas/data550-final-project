@@ -18,6 +18,10 @@ Code/Regression.R: Runs regression model and creates table with regression outpu
 
 Code/Make_Report.R: Renders report
 
+# How to synchronize package repository
+
+Run "make install" in terminal
+
 # How to run code and generate report
 
 Within the Makefile:
