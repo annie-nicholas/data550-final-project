@@ -6,7 +6,7 @@ library(gtsummary)
 here::i_am("Code/Descriptive_Stats.R")
 
 #read in data
-data <- data <- read.csv(file = here::here("HepatitisCdata.csv"))
+data <- data <- read.csv(file = here::here("Data/HepatitisCdata.csv"))
 
 #clean data
 data <- data %>%

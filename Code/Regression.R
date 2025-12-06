@@ -6,7 +6,7 @@ library(dplyr)
 here::i_am("Code/Regression.R")
 
 #read in data
-data <- read.csv(file = here::here("HepatitisCdata.csv"))
+data <- read.csv(file = here::here("Data/HepatitisCdata.csv"))
 
 #create binary variable for hepatitis status
 data <- data %>%

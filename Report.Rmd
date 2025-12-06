@@ -1,5 +1,5 @@
 ---
-title: "DATA550 Final Project Report"
+title: "DATA 550 Final Project Report"
 author: "Annie Nicholas"
 output: html_document
 ---
