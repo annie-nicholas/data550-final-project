@@ -28,4 +28,4 @@ Within the Makefile:
 
 1.  Generate descriptive statistics by running "make Output/Table1.rds" in terminal
 2.  Run regression and create the regression table and graph by running "make Output/Table_reg.rds Output/Reg_plot.png" in terminal
-3.  Compile report by running "make Report.html" in terminal
+3.  Compile report by running "make" in terminal
