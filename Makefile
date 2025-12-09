@@ -13,3 +13,18 @@ clean:
 .PHONY: install
 install:
 	Rscript -e "renv::restore(prompt = FALSE)"
+	
+#DOCKER RULES (run on local machine)
+PROJECTFILES = Report.Rmd Code/Descriptive_Stats.R Code/Regression.R Code/Make_Report.R Makefile
+RENVFILES = renv.lock renv/activate.R renv/settings.json
+
+#Rule to build
+project_image:$(PROJECTFILES) $(RENVFILES)
+	docker build -t project_image .
+	touch $@
+	
+#Rule to run (build automatically in container)
+Report/Report.html:
+	docker run -v "$$(pwd)/Report":"/FinalProject/Report" project_image
+	
+	
