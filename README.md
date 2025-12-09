@@ -38,6 +38,8 @@ To build image, run "make project_image" in terminal
 
 To run container, run "make Report/Report.html" in terminal
 
+\*Note: This was created on a Mac. To build report in a container on a Windows system, you will need to add a / in front of the first dollar sign in the "docker run" command.
+
 # Docker image
 
-https://hub.docker.com/repository/docker/annienicholas/project_image/general
+<https://hub.docker.com/repository/docker/annienicholas/project_image/general>
