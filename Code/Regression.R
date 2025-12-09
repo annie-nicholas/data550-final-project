@@ -2,6 +2,7 @@ library(here)
 library(gtsummary)
 library(ggplot2)
 library(dplyr)
+library(broom.helpers)
 
 here::i_am("Code/Regression.R")
 
