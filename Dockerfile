@@ -1,7 +1,7 @@
 FROM rocker/tidyverse:4.5.1
 
-RUN mkdir /"Final Project"
-WORKDIR /"Final Project"
+RUN mkdir /FinalProject
+WORKDIR /FinalProject
 
 RUN mkdir Code
 RUN mkdir Output
@@ -21,4 +21,4 @@ RUN Rscript -e "renv::restore(prompt=FALSE)"
 
 RUN mkdir Report
 
-CMD make && mv Report.html Reports
+CMD make && mv Report.html Report
