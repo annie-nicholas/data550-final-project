@@ -18,3 +18,7 @@ COPY renv/activate.R renv
 COPY renv/settings.json renv
 
 RUN Rscript -e "renv::restore(prompt=FALSE)"
+
+RUN mkdir Report
+
+CMD make && mv Report.html Reports
