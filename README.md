@@ -37,3 +37,7 @@ Compile report by running "make" in terminal
 To build image, run "make project_image" in terminal
 
 To run container, run "make Report/Report.html" in terminal
+
+# Docker image
+
+https://hub.docker.com/repository/docker/annienicholas/project_image/general
