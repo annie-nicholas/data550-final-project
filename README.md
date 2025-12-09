@@ -24,8 +24,16 @@ Run "make install" in terminal
 
 # How to run code and generate report
 
-Within the Makefile:
+##Without Docker
 
-1.  Generate descriptive statistics by running "make Output/Table1.rds" in terminal
-2.  Run regression and create the regression table and graph by running "make Output/Table_reg.rds Output/Reg_plot.png" in terminal
-3.  Compile report by running "make" in terminal
+Generate descriptive statistics by running "make Output/Table1.rds" in terminal
+
+Run regression and create the regression table and graph by running "make Output/Table_reg.rds Output/Reg_plot.png" in terminal
+
+Compile report by running "make" in terminal
+
+##With Docker
+
+To build image, run "make project_image" in terminal
+
+To run container, run "make Report/Report.html" in terminal
